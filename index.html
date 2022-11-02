@@ -10,17 +10,21 @@
     crossorigin=""></script>
     <link rel="stylesheet" href="map.css"/>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
-    <title>埋蔵文化財包蔵地</title>
+    <title>藤沢市埋蔵文化財包蔵地</title>
     
 </head>
-<body onload="getJSON('kyodo2.json')">
+<body onload="getJSON('kyodo2.json'),dateUpdate(),buttonAble()">
     <div id="fullOverlay">
         <div clas="text" style="background : white;">
-            <p >aaa</p>
-            <input type="button" value="OK" onclick="modalClose()">
+            <p >本地図は参考に公開しているものです。</p>
+            <p>明らかに影響のない場合は、連絡の必要はありません</p>
+            <p>近隣で工事予定がある場合は、必ず郷土歴史課へご連絡くださいますようお願いいたします。</p>
+            <p>了承した方のみ、以下のボタンを押して地図を閲覧してください。（３秒後に押せるようになります）</p>
+            <input type="button" id="okbutton" value="了承しました" onclick="modalClose()" disabled>
         </div>
     </div>
     <div id="mapid" style="height: 400px;"></div>
+    <div id="date"></div>
     <script type="text/javascript" src="map.js"></script>
 </body>
 </html>
